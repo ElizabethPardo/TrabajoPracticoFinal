@@ -16,13 +16,19 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.example.trabajopracticofinal.R;
+import com.google.android.material.textfield.TextInputEditText;
 
 import modelo.Propietario;
 
 public class PerfilFragment extends Fragment {
 
     private PerfilViewModel vm;
-    private EditText etDni,etApellido,etNombre,etTelefono,etEmail,etPass;
+    private TextInputEditText etDni;
+    private TextInputEditText etApellido;
+    private TextInputEditText etNombre;
+    private TextInputEditText etTelefono;
+    private TextInputEditText etEmail;
+    private TextInputEditText etPass;
     private Button btAceptar,btEditar;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -34,9 +40,9 @@ public class PerfilFragment extends Fragment {
 
         return root;
     }
-    public  void  inicializar(final View view)
+    private  void  inicializar(View view)
     {
-        etDni=view.findViewById(R.id.etdni);
+        etDni=view.findViewById(R.id.etDni);
         etApellido=view.findViewById(R.id.etApellido);
         etNombre=view.findViewById(R.id.etNombre);
         etTelefono=view.findViewById(R.id.etTelefono);
@@ -53,7 +59,7 @@ public class PerfilFragment extends Fragment {
                 etApellido.setText(propietario.getApellido());
                 etNombre.setText(propietario.getNombre());
                 etTelefono.setText(propietario.getTelefono());
-                etEmail.setText(propietario.getApellido());
+                etEmail.setText(propietario.getEmail());
                 etPass.setText(propietario.getPass());
             }
         });

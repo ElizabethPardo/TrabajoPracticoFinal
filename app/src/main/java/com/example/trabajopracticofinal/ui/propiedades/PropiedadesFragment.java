@@ -15,6 +15,7 @@ import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 import androidx.fragment.app.ListFragment;
 import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.viewpager.widget.ViewPager;
 
@@ -24,6 +25,8 @@ import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import modelo.Propiedad;
 
 public class PropiedadesFragment extends Fragment {
 
@@ -49,18 +52,37 @@ public class PropiedadesFragment extends Fragment {
         tabLayout = new TabLayout(getContext());
         appBarLayout.addView(tabLayout);
 
-        ViewPageAdapter vpa= new ViewPageAdapter(getActivity().getSupportFragmentManager(), FragmentStatePagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
-        vpa.addFragment(new PropiedadFragment(),"Prop 1");
-        vpa.addFragment(new PropiedadFragment(),"Prop 2");
+        vm= ViewModelProvider.AndroidViewModelFactory.getInstance(getActivity().getApplication()).create(PropiedadesViewModel.class);
+        vm.getInmuebles().observe(getViewLifecycleOwner(), new Observer<ArrayList<Propiedad>>() {
+                    @Override
+                    public void onChanged(ArrayList<Propiedad> propiedads) {
 
-        viewPager.setAdapter(vpa);
-        tabLayout.setupWithViewPager(viewPager);
+                        ViewPageAdapter adapter = new ViewPageAdapter(getParentFragmentManager(),FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
+                        int numero=0;
+                        for(Propiedad inmueble :propiedads)
+                        {
+                            numero++;
+                            Bundle bundle = new Bundle();
+                            bundle.putSerializable("inmueble",inmueble);
+                            PropiedadFragment fragment= new PropiedadFragment();
+                            fragment.setArguments(bundle);
+                            adapter.addFragment(fragment,"Inmueble "+numero);
+                        }
+
+                         viewPager.setAdapter(adapter);
+                         tabLayout.setupWithViewPager(viewPager);
+                    }
+                });
+
+                vm.cargarInmuebles();
+
     }
 
     public class ViewPageAdapter extends FragmentPagerAdapter
     {
         private List<Fragment> fragmentList = new ArrayList<>();
         private List<String> titulos= new ArrayList<>();
+        private int numero;
 
         public ViewPageAdapter(@NonNull FragmentManager fm, int behavior) {
             super(fm, behavior);

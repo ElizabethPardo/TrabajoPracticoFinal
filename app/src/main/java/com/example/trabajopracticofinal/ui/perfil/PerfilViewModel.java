@@ -24,6 +24,7 @@ public class PerfilViewModel extends ViewModel {
 
     public void recuperarPropietario()
     {
-        Propietario p = new Propietario(37638739,"Pardo","Elizabeth","2664508236","eli@gmail.com","123");
+        Propietario p = new Propietario("37638739","Pardo","Elizabeth","2664508236","eli@gmail.com","123");
+        propietario.setValue(p);
     }
 }

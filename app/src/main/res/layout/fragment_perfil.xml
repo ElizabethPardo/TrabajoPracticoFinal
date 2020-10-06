@@ -18,12 +18,13 @@
         android:layout_marginTop="5dp">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etdni"
+            android:id="@+id/etDni"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Número de documento(DNI)"
-            android:inputType="number"
+            android:textColor="#ffffff"
+            android:hint="Dni"
+            android:inputType="textPersonName"
             android:textSize="20sp"
             android:enabled="false"/>
     </com.google.android.material.textfield.TextInputLayout>
@@ -40,6 +41,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:textColor="#ffffff"
             android:hint="Apellido"
             android:inputType="textPersonName"
             android:textSize="20sp"
@@ -58,6 +60,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:textColor="#ffffff"
             android:hint="Nombre"
             android:inputType="textPersonName"
             android:textSize="20sp"
@@ -76,7 +79,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Télefono"
+            android:textColor="#ffffff"
+            android:hint="Telefono"
             android:inputType="text"
             android:textSize="20sp"
             android:enabled="false"/>
@@ -94,6 +98,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:textColor="#ffffff"
             android:hint="Email"
             android:inputType="textEmailAddress"
             android:textSize="20sp"
@@ -112,6 +117,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:textColor="#ffffff"
             android:hint="Password"
             android:inputType="textPassword"
             android:textSize="20sp"

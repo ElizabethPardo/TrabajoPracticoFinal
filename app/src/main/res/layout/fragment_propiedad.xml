@@ -22,7 +22,8 @@
             android:ems="10"
             android:hint="Domicilio"
             android:inputType="text"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:textColor="#ffffff"/>
     </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -41,6 +42,7 @@
             android:ems="10"
             android:hint="Ambientes"
             android:inputType="number"
+            android:textColor="#ffffff"
             android:textSize="20sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -59,7 +61,8 @@
             android:ems="10"
             android:enabled="false"
             android:hint="Tipo"
-            android:inputType="number"
+            android:textColor="#ffffff"
+            android:inputType="text"
             android:textSize="20sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -77,7 +80,8 @@
             android:ems="10"
             android:enabled="false"
             android:hint="Uso"
-            android:inputType="number"
+            android:inputType="text"
+            android:textColor="#ffffff"
             android:textSize="20sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -99,6 +103,7 @@
             android:ems="10"
             android:enabled="false"
             android:hint="Precio"
+            android:textColor="#ffffff"
             android:inputType="number"
             android:textSize="20sp" />
 
