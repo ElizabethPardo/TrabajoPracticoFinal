@@ -39,9 +39,9 @@ public class PropiedadesViewModel extends AndroidViewModel {
     public void cargarInmuebles(){
 
         ArrayList<Propiedad> inmuebles= new ArrayList<>();
-        inmuebles.add(new Propiedad("Pedernera 1234",3,"Departamento","Residencial",20000));
-        inmuebles.add(new Propiedad("Balcarse 123",2,"Local","Comercial",25999));
-        inmuebles.add(new Propiedad("Belgrano 899",4,"Casa","Residencial",15899));
+        inmuebles.add(new Propiedad("Pedernera 1234",3,"Departamento","Residencial",20000,"casa1"));
+        inmuebles.add(new Propiedad("Balcarse 123",2,"Local","Comercial",25999,"casa2"));
+        inmuebles.add(new Propiedad("Belgrano 899",4,"Casa","Residencial",15899,"casa3"));
         this.inmuebles.setValue(inmuebles);
     }
 

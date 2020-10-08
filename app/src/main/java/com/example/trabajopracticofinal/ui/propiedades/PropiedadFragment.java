@@ -1,5 +1,6 @@
 package com.example.trabajopracticofinal.ui.propiedades;
 
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -12,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.ImageView;
 
 import com.example.trabajopracticofinal.R;
 import com.example.trabajopracticofinal.ui.perfil.PerfilViewModel;
@@ -27,13 +29,15 @@ public class PropiedadFragment extends Fragment {
     private  TextInputEditText etTipo;
     private  TextInputEditText etUso;
     private  TextInputEditText etPrecio;
+    private ImageView imagen;
 
-    public PropiedadFragment(TextInputEditText etDireccion, TextInputEditText etAmbientes, TextInputEditText etTipo, TextInputEditText etUso, TextInputEditText etPrecio) {
+    public PropiedadFragment(TextInputEditText etDireccion, TextInputEditText etAmbientes, TextInputEditText etTipo, TextInputEditText etUso, TextInputEditText etPrecio,ImageView imagen) {
         this.etDireccion = etDireccion;
         this.etAmbientes = etAmbientes;
         this.etTipo = etTipo;
         this.etUso = etUso;
         this.etPrecio = etPrecio;
+        this.imagen=imagen;
     }
 
     public PropiedadFragment() {
@@ -58,6 +62,7 @@ public class PropiedadFragment extends Fragment {
         etTipo=view.findViewById(R.id.etTipo);
         etUso=view.findViewById(R.id.etUso);
         etPrecio=view.findViewById(R.id.etPrecio);
+        imagen=(ImageView) view.findViewById(R.id.imagen);
 
         vm= ViewModelProvider.AndroidViewModelFactory.getInstance(getActivity().getApplication()).create(PropiedadViewModel.class);
         vm.getInmueble().observe(getViewLifecycleOwner(), new Observer<Propiedad>() {
@@ -68,6 +73,7 @@ public class PropiedadFragment extends Fragment {
                 etTipo.setText(propiedad.getTipo());
                 etUso.setText(propiedad.getUso());
                 etPrecio.setText(String.valueOf(propiedad.getPrecio()));
+                imagen.setImageDrawable(Drawable.createFromPath(propiedad.getImagen()));
             }
         });
 
