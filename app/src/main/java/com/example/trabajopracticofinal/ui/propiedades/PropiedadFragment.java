@@ -29,7 +29,7 @@ public class PropiedadFragment extends Fragment {
     private  TextInputEditText etTipo;
     private  TextInputEditText etUso;
     private  TextInputEditText etPrecio;
-    private ImageView imagen;
+    private  ImageView imagen;
 
     public PropiedadFragment(TextInputEditText etDireccion, TextInputEditText etAmbientes, TextInputEditText etTipo, TextInputEditText etUso, TextInputEditText etPrecio,ImageView imagen) {
         this.etDireccion = etDireccion;
@@ -62,7 +62,7 @@ public class PropiedadFragment extends Fragment {
         etTipo=view.findViewById(R.id.etTipo);
         etUso=view.findViewById(R.id.etUso);
         etPrecio=view.findViewById(R.id.etPrecio);
-        imagen=(ImageView) view.findViewById(R.id.imagen);
+        final ImageView imagen= (ImageView) view.findViewById(R.id.imagen);
 
         vm= ViewModelProvider.AndroidViewModelFactory.getInstance(getActivity().getApplication()).create(PropiedadViewModel.class);
         vm.getInmueble().observe(getViewLifecycleOwner(), new Observer<Propiedad>() {
@@ -73,10 +73,10 @@ public class PropiedadFragment extends Fragment {
                 etTipo.setText(propiedad.getTipo());
                 etUso.setText(propiedad.getUso());
                 etPrecio.setText(String.valueOf(propiedad.getPrecio()));
-                imagen.setImageDrawable(Drawable.createFromPath(propiedad.getImagen()));
+                imagen.setImageResource(propiedad.getImagen());
             }
         });
 
-        vm.cargarInmueble(getArguments());
+     vm.cargarInmueble(getArguments());
     }
 }

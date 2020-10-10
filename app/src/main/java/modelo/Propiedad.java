@@ -10,12 +10,12 @@ public class Propiedad  implements Serializable {
     private String uso;
     private double precio;
     private int idPropietario;
-    private String imagen;
+    private int imagen;
 
     public Propiedad() {
     }
 
-    public Propiedad(String direccion, int ambientes, String tipo, String uso, double precio,String imagen) {
+    public Propiedad(String direccion, int ambientes, String tipo, String uso, double precio,int imagen) {
         this.direccion = direccion;
         this.ambientes = ambientes;
         this.tipo = tipo;
@@ -80,11 +80,11 @@ public class Propiedad  implements Serializable {
         this.idPropietario = idPropietario;
     }
 
-    public String getImagen() {
+    public int getImagen() {
         return imagen;
     }
 
-    public void setImagen(String imagen) {
+    public void setImagen(int imagen) {
         this.imagen = imagen;
     }
 }

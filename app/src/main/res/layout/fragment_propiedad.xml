@@ -12,8 +12,9 @@
 
     <ImageView
         android:id="@+id/imagen"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
         tools:srcCompat="@tools:sample/avatars" />
 
     <com.google.android.material.textfield.TextInputLayout
@@ -122,8 +123,8 @@
     <Button
         android:id="@+id/btEditar2"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginTop="100dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="50dp"
         android:background="@drawable/button_rounded"
         android:text="Editar"
         android:textColor="#ffffff"

@@ -5,16 +5,22 @@ import java.util.Date;
 public class Pago {
     private int idPago;
     private int nroPago;
-    private Date fechaPago;
+    private String fechaPago;
     private Double importe;
     private int idContrato;
 
-    public Pago(int idPago, int nroPago, Date fechaPago, Double importe, int idContrato) {
+    public Pago(int idPago, int nroPago, String fechaPago, Double importe, int idContrato) {
         this.idPago = idPago;
         this.nroPago = nroPago;
         this.fechaPago = fechaPago;
         this.importe = importe;
         this.idContrato = idContrato;
+    }
+
+    public Pago(int nroPago, String fechaPago, Double importe) {
+        this.nroPago = nroPago;
+        this.fechaPago = fechaPago;
+        this.importe = importe;
     }
 
     public Pago() {
@@ -36,11 +42,11 @@ public class Pago {
         this.nroPago = nroPago;
     }
 
-    public Date getFechaPago() {
+    public String getFechaPago() {
         return fechaPago;
     }
 
-    public void setFechaPago(Date fechaPago) {
+    public void setFechaPago(String fechaPago) {
         this.fechaPago = fechaPago;
     }
 

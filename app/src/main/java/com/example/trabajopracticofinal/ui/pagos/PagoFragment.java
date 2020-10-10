@@ -14,25 +14,22 @@ import android.view.ViewGroup;
 
 import com.example.trabajopracticofinal.R;
 
-public class PagosFragment extends Fragment {
+public class PagoFragment extends Fragment {
 
-    private PagosViewModel mViewModel;
 
-    public static PagosFragment newInstance() {
-        return new PagosFragment();
+
+    public static PagoFragment newInstance() {
+        return new PagoFragment();
     }
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.pagos_fragment, container, false);
+        View root= inflater.inflate(R.layout.pago_fragment, container, false);
+
+        return root;
     }
 
-    @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
 
-        // TODO: Use the ViewModel
-    }
 
 }
