@@ -2,7 +2,6 @@ package com.example.trabajopracticofinal.ui.contratos;
 
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.lifecycle.ViewModelProviders;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -23,7 +22,7 @@ import com.example.trabajopracticofinal.R;
 
 import java.util.ArrayList;
 
-import modelo.Contrato;
+import com.example.trabajopracticofinal.modelo.Contrato;
 
 public class ContratosFragment extends Fragment {
 
@@ -49,23 +48,16 @@ public class ContratosFragment extends Fragment {
         vm.getContratos().observe(getViewLifecycleOwner(), new Observer<ArrayList<Contrato>>() {
             @Override
             public void onChanged(ArrayList<Contrato> contratoes) {
-                adapter = new ContratoAdapter(context, R.layout.contrato_fragment, contratoes, getLayoutInflater());
+                adapter= new ContratoAdapter(context,R.layout.contrato_fragment,contratoes,getLayoutInflater());
                 lvContratos.setAdapter(adapter);
-                lvContratos.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                    @Override
-                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                        Bundle bundle = new Bundle();
-                        Contrato contrato= adapter.getItem(position);
-                        bundle.putSerializable("contrato",contrato);
-
-
-                        Navigation.findNavController(getActivity(),R.id.nav_host_fragment).navigate(R.id.nav_contratos,bundle);
-                    }
-                });
-
 
             }
         });
+
+        vm.cargarContratos();
+
+
+
     }
 
 

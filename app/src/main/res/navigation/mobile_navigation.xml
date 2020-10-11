@@ -25,34 +25,30 @@
     <fragment
         android:id="@+id/nav_pagos"
         android:name="com.example.trabajopracticofinal.ui.pagos.PagosFragment"
-        android:label="pagos_fragment"
-        tools:layout="@layout/pagos_fragment" />
+        android:label="Pagos por contrato"
+        tools:layout="@layout/pagos_fragment" >
+        <action
+            android:id="@+id/action_nav_pagos_to_pagoFragment"
+            app:destination="@id/pagoFragment" />
+    </fragment>
     <fragment
         android:id="@+id/nav_logout"
         android:name="com.example.trabajopracticofinal.ui.logout.LogoutFragment"
-        android:label="logout_fragment"
+        android:label="Salir"
         tools:layout="@layout/fragment_logout" />
     <fragment
         android:id="@+id/nav_contratos"
         android:name="com.example.trabajopracticofinal.ui.contratos.ContratosFragment"
-        android:label="contratos_fragment"
-        tools:layout="@layout/contratos_fragment" >
-        <action
-            android:id="@+id/action_nav_contratos_to_contratoFragment"
-            app:destination="@id/contratoFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/contratoFragment"
-        android:name="com.example.trabajopracticofinal.ui.contratos.ContratoFragment"
-        android:label="contrato_fragment"
-        tools:layout="@layout/contrato_fragment" >
-        <action
-            android:id="@+id/action_contratoFragment_to_nav_contratos"
-            app:destination="@id/nav_contratos" />
-    </fragment>
+        android:label="Contratos"
+        tools:layout="@layout/contratos_fragment" />
+
     <fragment
         android:id="@+id/pagoFragment"
         android:name="com.example.trabajopracticofinal.ui.pagos.PagoFragment"
-        android:label="pago_fragment"
-        tools:layout="@layout/pago_fragment" />
+        android:label="Pago"
+        tools:layout="@layout/pago_fragment" >
+        <action
+            android:id="@+id/action_pagoFragment_to_nav_pagos"
+            app:destination="@id/nav_pagos" />
+    </fragment>
 </navigation>

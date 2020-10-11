@@ -8,12 +8,11 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
-import androidx.lifecycle.ViewModel;
 
 import java.util.ArrayList;
 
-import modelo.Inquilino;
-import modelo.Propiedad;
+import com.example.trabajopracticofinal.modelo.Inquilino;
+import com.example.trabajopracticofinal.modelo.Propiedad;
 
 public class InquilinosViewModel extends AndroidViewModel {
 

@@ -1,8 +1,8 @@
-package modelo;
+package com.example.trabajopracticofinal.modelo;
 
-import java.util.Date;
+import java.io.Serializable;
 
-public class Pago {
+public class Pago implements Serializable {
     private int idPago;
     private int nroPago;
     private String fechaPago;
@@ -50,7 +50,7 @@ public class Pago {
         this.fechaPago = fechaPago;
     }
 
-    public Double getImporte() {
+    public double getImporte() {
         return importe;
     }
 

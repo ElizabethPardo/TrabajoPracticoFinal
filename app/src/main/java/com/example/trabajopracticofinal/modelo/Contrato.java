@@ -1,32 +1,34 @@
-package modelo;
+package com.example.trabajopracticofinal.modelo;
 
 import java.io.Serializable;
-import java.util.Date;
 
 public class Contrato implements Serializable {
     private int idContrato;
     private String fechaIngreso;
     private String fechaSalida;
     private double importe;
-    private int idInmueble;
-    private int idInquilino;
+    private Propiedad inmueble;
+    private Inquilino inquilino;
 
-    public Contrato(String fechaIngreso, String fechaSalida,double importe, int idInmueble, int idInquilino) {
+    public Contrato(String fechaIngreso, String fechaSalida,double importe, Propiedad innmueble, Inquilino inquilino) {
         this.fechaIngreso = fechaIngreso;
         this.fechaSalida = fechaSalida;
         this.importe=importe;
-        this.idInmueble = idInmueble;
-        this.idInquilino = idInquilino;
+        this.inmueble = innmueble;
+        this.inquilino = inquilino;
     }
 
     public Contrato() {
     }
 
-    public Contrato(String fechaIngreso, String fechaSalida, double importe) {
+    public Contrato(String fechaIngreso, String fechaSalida, double importe, Inquilino inquilino) {
         this.fechaIngreso = fechaIngreso;
         this.fechaSalida = fechaSalida;
         this.importe = importe;
+        this.inquilino=inquilino;
     }
+
+
 
     public int getIdContrato() {
         return idContrato;
@@ -52,20 +54,20 @@ public class Contrato implements Serializable {
         this.fechaSalida = fechaSalida;
     }
 
-    public int getIdInmueble() {
-        return idInmueble;
+    public Propiedad getIdInmueble() {
+        return inmueble;
     }
 
-    public void setIdInmueble(int idInmueble) {
-        this.idInmueble = idInmueble;
+    public void setIdInmueble(Propiedad idInmueble) {
+        this.inmueble = idInmueble;
     }
 
-    public int getIdInquilino() {
-        return idInquilino;
+    public Inquilino getIdInquilino() {
+        return inquilino;
     }
 
-    public void setIdInquilino(int idInquilino) {
-        this.idInquilino = idInquilino;
+    public void setIdInquilino(Inquilino idInquilino) {
+        this.inquilino = idInquilino;
     }
 
     public double getImporte() {

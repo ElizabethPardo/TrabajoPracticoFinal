@@ -12,10 +12,11 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 import com.example.trabajopracticofinal.R;
+import com.example.trabajopracticofinal.modelo.Propiedad;
 
 import java.util.ArrayList;
 
-import modelo.Propiedad;
+
 
 public class PropiedadesViewModel extends AndroidViewModel {
 
@@ -41,9 +42,9 @@ public class PropiedadesViewModel extends AndroidViewModel {
     public void cargarInmuebles(){
 
         ArrayList<Propiedad> inmuebles= new ArrayList<>();
-        inmuebles.add(new Propiedad("Pedernera 1234",3,"Departamento","Residencial",20000, R.drawable.casa1));
-        inmuebles.add(new Propiedad("Balcarse 123",2,"Local","Comercial",25999,R.drawable.casa2));
-        inmuebles.add(new Propiedad("Belgrano 899",4,"Casa","Residencial",15899,R.drawable.casa3));
+        inmuebles.add(new Propiedad("Pedernera 1234",3,"Departamento","Residencial",20000, true,R.drawable.casa1));
+        inmuebles.add(new Propiedad("Balcarse 123",2,"Local","Comercial",25999,false,R.drawable.casa2));
+        inmuebles.add(new Propiedad("Belgrano 899",4,"Casa","Residencial",15899,true,R.drawable.casa3));
         this.inmuebles.setValue(inmuebles);
     }
 

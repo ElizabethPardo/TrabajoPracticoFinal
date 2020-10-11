@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -17,17 +16,14 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.viewpager.widget.ViewPager;
 
 import com.example.trabajopracticofinal.R;
-import com.example.trabajopracticofinal.ui.propiedades.PropiedadFragment;
-import com.example.trabajopracticofinal.ui.propiedades.PropiedadesFragment;
-import com.example.trabajopracticofinal.ui.propiedades.PropiedadesViewModel;
 import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import modelo.Inquilino;
-import modelo.Propiedad;
+import com.example.trabajopracticofinal.modelo.Inquilino;
+import com.example.trabajopracticofinal.modelo.Propiedad;
 
 public class InquilinosFragment extends Fragment {
 

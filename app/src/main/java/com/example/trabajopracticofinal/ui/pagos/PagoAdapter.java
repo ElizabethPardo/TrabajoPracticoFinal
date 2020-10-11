@@ -1,5 +1,6 @@
 package com.example.trabajopracticofinal.ui.pagos;
 
+import android.app.Application;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,26 +10,32 @@ import android.widget.EditText;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.lifecycle.ViewModelProvider;
 
 import com.example.trabajopracticofinal.R;
+import com.example.trabajopracticofinal.modelo.Contrato;
+import com.example.trabajopracticofinal.modelo.Pago;
+import com.example.trabajopracticofinal.ui.contratos.ContratosViewModel;
 import com.google.android.material.textfield.TextInputEditText;
 
 import java.util.List;
 
-import modelo.Contrato;
-import modelo.Pago;
 
-public class PagoAdapter extends ArrayAdapter<Pago> {
+
+public class PagoAdapter extends ArrayAdapter<Contrato> {
 
     private  Context context;
-    private List<Pago> pagos;
+    private List<Contrato> contratos;
     private LayoutInflater li;
+    private ContratosViewModel vm;
 
-    public PagoAdapter(@NonNull Context context, int resource, @NonNull List<Pago> objects,LayoutInflater layoutInflater) {
-        super(context, resource, objects);
-        this.context=context;
-        this.pagos=objects;
-        this.li=layoutInflater;
+
+
+    public PagoAdapter(@NonNull Context context, int resource, List<Contrato> contratos, LayoutInflater li) {
+        super(context, resource, contratos);
+        this.context = context;
+        this.contratos = contratos;
+        this.li = li;
     }
 
     @NonNull
@@ -40,16 +47,18 @@ public class PagoAdapter extends ArrayAdapter<Pago> {
         {
             item= li.inflate(R.layout.contrato_fragment,parent,false);
         }
+      
 
-        Pago pago =pagos.get(position);
-        TextInputEditText nroPago= item.findViewById(R.id.etdNroPago);
-        TextInputEditText fechaPago= item.findViewById(R.id.etdFechaPago);
-        TextInputEditText importePago=item.findViewById(R.id.etdImportePago);
+        Contrato contrato =contratos.get(position);
+        TextInputEditText fechaIngreso= item.findViewById(R.id.etdFechaIngreso);
+        TextInputEditText fechaSalida= item.findViewById(R.id.etdFechaSalida);
+        TextInputEditText importe=item.findViewById(R.id.etdImporte);
+        TextInputEditText direccionInquilino=item.findViewById(R.id.etdDireccionInquilino);
 
-        nroPago.setText(pago.getNroPago());
-        fechaPago.setText((CharSequence) pago.getFechaPago());
-        importePago.setText(" $" + pago.getImporte());
-
+        fechaIngreso.setText(contrato.getFechaIngreso());
+        fechaSalida.setText(contrato.getFechaSalida());
+        importe.setText(" $" +(int) contrato.getImporte());
+        direccionInquilino.setText(contrato.getIdInquilino().getDireccion());
         return  item;
     }
 }

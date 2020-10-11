@@ -9,7 +9,7 @@
     tools:context=".ui.pagos.PagosFragment">
 
     <ListView
-        android:id="@+id/lvPagos"
+        android:id="@+id/lvContratos2"
         android:layout_height="match_parent"
         android:layout_width="match_parent"
         >

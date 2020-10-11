@@ -1,4 +1,4 @@
-package modelo;
+package com.example.trabajopracticofinal.modelo;
 
 import java.io.Serializable;
 
@@ -29,6 +29,11 @@ public class Inquilino implements Serializable {
         this.dniGarante = dniGarante;
         this.telefonoGarante = telefonoGarante;
     }
+
+    public Inquilino(String direccion) {
+        this.direccion=direccion;
+    }
+
 
     public int getIdInquilino() {
         return idInquilino;

@@ -10,10 +10,9 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.trabajopracticofinal.R;
-import com.example.trabajopracticofinal.ui.propiedades.PropiedadViewModel;
 import com.google.android.material.textfield.TextInputEditText;
 
-import modelo.Inquilino;
+import com.example.trabajopracticofinal.modelo.Inquilino;
 
 public class InquilinoFragment extends Fragment {
 
@@ -42,6 +41,7 @@ public class InquilinoFragment extends Fragment {
         this.etNombreGarante = etNombreGarante;
         this.etDniGarante = etDniGarante;
         this.etTelefonoGarante = etTelefonoGarante;
+
     }
 
     @Override
@@ -65,6 +65,7 @@ public class InquilinoFragment extends Fragment {
         etDniGarante=view.findViewById(R.id.etDniGarante);
         etNombreGarante= view.findViewById(R.id.etNombreGarante);
         etTelefonoGarante=view.findViewById(R.id.etTelefonoGarante);
+
 
         vm= ViewModelProvider.AndroidViewModelFactory.getInstance(getActivity().getApplication()).create(InquilinoViewModel.class);
         vm.getInquilino().observe(getViewLifecycleOwner(), new Observer<Inquilino>() {

@@ -1,19 +1,16 @@
 package com.example.trabajopracticofinal.ui.propiedades;
 
 import android.app.Application;
-import android.content.Context;
 import android.os.Bundle;
-import android.widget.ArrayAdapter;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
-import androidx.lifecycle.ViewModel;
 
-import java.util.ArrayList;
+import com.example.trabajopracticofinal.modelo.Propiedad;
 
-import modelo.Propiedad;
+
 
 public class PropiedadViewModel extends AndroidViewModel {
 

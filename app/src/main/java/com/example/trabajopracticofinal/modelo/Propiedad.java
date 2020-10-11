@@ -1,4 +1,4 @@
-package modelo;
+package com.example.trabajopracticofinal.modelo;
 
 import java.io.Serializable;
 
@@ -9,18 +9,20 @@ public class Propiedad  implements Serializable {
     private  String tipo;
     private String uso;
     private double precio;
-    private int idPropietario;
+    private boolean estado;
     private int imagen;
+    private Propietario propietario;
 
     public Propiedad() {
     }
 
-    public Propiedad(String direccion, int ambientes, String tipo, String uso, double precio,int imagen) {
+    public Propiedad(String direccion, int ambientes, String tipo, String uso, double precio, boolean estado,int imagen) {
         this.direccion = direccion;
         this.ambientes = ambientes;
         this.tipo = tipo;
         this.uso = uso;
         this.precio = precio;
+        this.estado=estado;
         this.imagen=imagen;
     }
 
@@ -72,19 +74,27 @@ public class Propiedad  implements Serializable {
         this.precio = precio;
     }
 
-    public int getIdPropietario() {
-        return idPropietario;
-    }
-
-    public void setIdPropietario(int idPropietario) {
-        this.idPropietario = idPropietario;
-    }
-
     public int getImagen() {
         return imagen;
     }
 
     public void setImagen(int imagen) {
         this.imagen = imagen;
+    }
+
+    public boolean getEstado() {
+        return estado;
+    }
+
+    public void setEstado(boolean estado) {
+        this.estado = estado;
+    }
+
+    public Propietario getPropietario() {
+        return propietario;
+    }
+
+    public void setPropietario(Propietario propietario) {
+        this.propietario = propietario;
     }
 }

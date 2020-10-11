@@ -10,10 +10,13 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+import com.example.trabajopracticofinal.modelo.Contrato;
+import com.example.trabajopracticofinal.modelo.Inquilino;
+
 import java.util.ArrayList;
 
-import modelo.Contrato;
-import modelo.Propiedad;
+
+
 
 public class ContratosViewModel extends AndroidViewModel {
     private Context context;
@@ -37,9 +40,9 @@ public class ContratosViewModel extends AndroidViewModel {
     public void cargarContratos()
     {
         ArrayList<Contrato> contratos = new ArrayList<>();
-        contratos.add(new Contrato("22/10/2018","22/10/2019",23300));
-        contratos.add(new Contrato("01/05/2019","01/05/2020",43555));
-        contratos.add(new Contrato("15/03/2020","15/03/2021",15000));
+        contratos.add(new Contrato("22/10/2018","22/10/2019",23300,new Inquilino("Pedernera 1234")));
+        contratos.add(new Contrato("01/05/2019","01/05/2020",43555,new Inquilino("Balcarse 123")));
+        contratos.add(new Contrato("15/03/2020","15/03/2021",15000,new Inquilino("Belgrano 899")));
 
         this.contratos.setValue(contratos);
     }

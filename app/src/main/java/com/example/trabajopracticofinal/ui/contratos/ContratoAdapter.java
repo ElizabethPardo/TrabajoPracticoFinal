@@ -5,7 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.EditText;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -15,7 +14,7 @@ import com.google.android.material.textfield.TextInputEditText;
 
 import java.util.List;
 
-import modelo.Contrato;
+import com.example.trabajopracticofinal.modelo.Contrato;
 
 public class ContratoAdapter extends ArrayAdapter<Contrato> {
 
@@ -45,10 +44,12 @@ public class ContratoAdapter extends ArrayAdapter<Contrato> {
         TextInputEditText fechaIngreso= item.findViewById(R.id.etdFechaIngreso);
         TextInputEditText fechaSalida= item.findViewById(R.id.etdFechaSalida);
         TextInputEditText importe=item.findViewById(R.id.etdImporte);
+        TextInputEditText direccionInquilino=item.findViewById(R.id.etdDireccionInquilino);
 
         fechaIngreso.setText(contrato.getFechaIngreso());
         fechaSalida.setText(contrato.getFechaSalida());
         importe.setText(" $" +(int) contrato.getImporte());
+        direccionInquilino.setText(contrato.getIdInquilino().getDireccion());
 
         return  item;
     }

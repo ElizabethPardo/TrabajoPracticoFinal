@@ -7,10 +7,9 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
-import androidx.lifecycle.ViewModel;
 
-import modelo.Contrato;
-import modelo.Propiedad;
+import com.example.trabajopracticofinal.modelo.Contrato;
+import com.example.trabajopracticofinal.modelo.Propiedad;
 
 public class ContratoViewModel extends AndroidViewModel {
 
@@ -30,7 +29,7 @@ public class ContratoViewModel extends AndroidViewModel {
     }
 
     public void cargarContrato(Bundle arguments) {
-    Contrato  contrato= (Contrato) arguments.getSerializable("contrato");
+    Contrato contrato= (Contrato) arguments.getSerializable("contrato");
         this.contrato.setValue(contrato);
     }
 }

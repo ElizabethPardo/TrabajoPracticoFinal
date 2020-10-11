@@ -16,14 +16,15 @@
             android:id="@+id/nav_inquilinos"
             android:icon="@drawable/usuarios"
             android:title="Inquilinos" />
-        <item
-            android:id="@+id/nav_pagos"
-            android:icon="@drawable/pago"
-            android:title="Pagos" />
+
         <item
             android:id="@+id/nav_contratos"
             android:icon="@drawable/escritura"
             android:title="Contratos" />
+        <item
+            android:id="@+id/nav_pagos"
+            android:icon="@drawable/pago"
+            android:title="Pagos" />
         <item
             android:id="@+id/nav_logout"
             android:icon="@drawable/logout"
