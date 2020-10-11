@@ -23,6 +23,7 @@ public class ContratoViewModel extends AndroidViewModel {
 
         if(contrato == null)
         {
+
             contrato = new MutableLiveData<>();
         }
         return contrato;
