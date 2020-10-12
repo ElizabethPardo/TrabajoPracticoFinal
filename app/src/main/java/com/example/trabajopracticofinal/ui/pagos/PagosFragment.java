@@ -28,10 +28,10 @@ import com.example.trabajopracticofinal.modelo.Pago;
 public class PagosFragment extends Fragment {
 
     private ListView lvContratos;
-    private ListView lvPagos;
+
     private PagosViewModel vm;
     PagoAdapter adapter;
-    PagosAdapter adapterPagos;
+
     Context context;
 
     public static PagosFragment newInstance() {
@@ -51,7 +51,7 @@ public class PagosFragment extends Fragment {
     private void inicializar(View root) {
 
         lvContratos = root.findViewById(R.id.lvContratos2);
-        lvPagos=root.findViewById(R.id.lvPagos);
+
         vm= ViewModelProvider.AndroidViewModelFactory.getInstance(getActivity().getApplication()).create(PagosViewModel.class);
         vm.getContratos().observe(getViewLifecycleOwner(), new Observer<ArrayList<Contrato>>() {
                    @Override
@@ -63,7 +63,7 @@ public class PagosFragment extends Fragment {
                            @Override
                            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-
+                               Navigation.findNavController(getActivity(),R.id.nav_host_fragment).navigate(R.id.pagoFragment);
 
                            }
                        });
@@ -71,28 +71,7 @@ public class PagosFragment extends Fragment {
                });
                vm.cargarContratos();
 
-        vm.getPagos().observe(getViewLifecycleOwner(), new Observer<ArrayList<Pago>>() {
-            @Override
-            public void onChanged(ArrayList<Pago> pagos) {
-                adapterPagos= new PagosAdapter(context,R.layout.item_pago,pagos,getLayoutInflater());
-                lvPagos.setAdapter(adapterPagos);
-                lvPagos.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                    @Override
-                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                        Bundle bundle = new Bundle();
-
-                        Pago pago= new Pago();
-                        bundle.putInt("nroPago",pago.getNroPago());
-                        bundle.putString("fechaPago",pago.getFechaPago());
-                        bundle.putInt("importe", (int) pago.getImporte());
-                        Navigation.findNavController(getActivity(),R.id.nav_host_fragment).navigate(R.id.pagoFragment,bundle);
-                    }
-                });
-
-            }
-        });
-        vm.cargarPagos();
 
 
 

@@ -58,9 +58,9 @@ public class PagosAdapter extends ArrayAdapter<Pago> {
         TextInputEditText etFechaPago=  item.findViewById(R.id.etdFechaPago);
         TextInputEditText etImportePago= item.findViewById(R.id.etdImportePago);
 
-        etNroPago.setText(pago.getNroPago());
+        etNroPago.setText((""+ pago.getNroPago()));
         etFechaPago.setText(pago.getFechaPago());
-        etImportePago.setText((int) pago.getImporte());
+        etImportePago.setText("$" +pago.getImporte());
 
         return  item;
 
