@@ -2,40 +2,53 @@ package com.example.trabajopracticofinal.modelo;
 
 public class Propietario {
 
-    private int idPropietario;
-    private String dni;
-    private String apellido;
+    private int id;
     private  String nombre;
+    private String apellido;
+    private String dni;
+    private String direccion;
     private String telefono;
     private String email;
-    private String pass;
+    private String clave;
 
     public Propietario() {
     }
 
-    public Propietario(String dni, String apellido, String nombre, String telefono, String email, String pass) {
-        this.dni = dni;
-        this.apellido = apellido;
+    public Propietario(int id, String nombre, String apellido, String dni, String direccion, String telefono, String email, String clave) {
+        this.id = id;
         this.nombre = nombre;
+        this.apellido = apellido;
+        this.dni = dni;
+        this.direccion = direccion;
         this.telefono = telefono;
         this.email = email;
-        this.pass = pass;
+        this.clave = clave;
     }
 
-    public int getIdPropietario() {
-        return idPropietario;
-    }
-
-    public void setIdPropietario(int idPropietario) {
-        this.idPropietario = idPropietario;
-    }
-
-    public String getDni() {
-        return dni;
-    }
-
-    public void setDni(String dni) {
+    public Propietario(String nombre, String apellido, String dni, String direccion, String telefono, String email, String clave) {
+        this.nombre = nombre;
+        this.apellido = apellido;
         this.dni = dni;
+        this.direccion = direccion;
+        this.telefono = telefono;
+        this.email = email;
+        this.clave = clave;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public String getApellido() {
@@ -46,12 +59,20 @@ public class Propietario {
         this.apellido = apellido;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getDni() {
+        return dni;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setDni(String dni) {
+        this.dni = dni;
+    }
+
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
     }
 
     public String getTelefono() {
@@ -70,11 +91,11 @@ public class Propietario {
         this.email = email;
     }
 
-    public String getPass() {
-        return pass;
+    public String getClave() {
+        return clave;
     }
 
-    public void setPass(String pass) {
-        this.pass = pass;
+    public void setClave(String clave) {
+        this.clave = clave;
     }
 }

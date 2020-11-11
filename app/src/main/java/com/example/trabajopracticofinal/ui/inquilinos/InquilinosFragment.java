@@ -23,7 +23,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.example.trabajopracticofinal.modelo.Inquilino;
-import com.example.trabajopracticofinal.modelo.Propiedad;
 
 public class InquilinosFragment extends Fragment {
 

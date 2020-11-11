@@ -9,7 +9,6 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
 import com.example.trabajopracticofinal.modelo.Contrato;
-import com.example.trabajopracticofinal.modelo.Propiedad;
 
 public class ContratoViewModel extends AndroidViewModel {
 

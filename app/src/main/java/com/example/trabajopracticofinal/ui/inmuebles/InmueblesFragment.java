@@ -1,4 +1,4 @@
-package com.example.trabajopracticofinal.ui.propiedades;
+package com.example.trabajopracticofinal.ui.inmuebles;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -22,20 +22,20 @@ import com.google.android.material.tabs.TabLayout;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.example.trabajopracticofinal.modelo.Propiedad;
+import com.example.trabajopracticofinal.modelo.Inmueble;
 
-public class PropiedadesFragment extends Fragment {
+public class InmueblesFragment extends Fragment {
 
     private ViewPager viewPager;
     private TabLayout tabLayout;
     private AppBarLayout appBarLayout;
-    private PropiedadesViewModel vm;
+    private InmueblesViewModel vm;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
-                ViewModelProviders.of(this).get(PropiedadesViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_propiedades, container, false);
+                ViewModelProviders.of(this).get(InmueblesViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_inmuebles, container, false);
 
         inicializar(root);
         return root;
@@ -48,19 +48,19 @@ public class PropiedadesFragment extends Fragment {
         tabLayout = new TabLayout(getContext());
         appBarLayout.addView(tabLayout);
 
-        vm= ViewModelProvider.AndroidViewModelFactory.getInstance(getActivity().getApplication()).create(PropiedadesViewModel.class);
-        vm.getInmuebles().observe(getViewLifecycleOwner(), new Observer<ArrayList<Propiedad>>() {
+        vm= ViewModelProvider.AndroidViewModelFactory.getInstance(getActivity().getApplication()).create(InmueblesViewModel.class);
+        vm.getInmuebles().observe(getViewLifecycleOwner(), new Observer<ArrayList<Inmueble>>() {
                     @Override
-                    public void onChanged(ArrayList<Propiedad> propiedads) {
+                    public void onChanged(ArrayList<Inmueble> inmuebles) {
 
                         ViewPageAdapter adapter = new ViewPageAdapter(getParentFragmentManager(),FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
                         int numero=0;
-                        for(Propiedad inmueble :propiedads)
+                        for(Inmueble inmueble : inmuebles)
                         {
                             numero++;
                             Bundle bundle = new Bundle();
                             bundle.putSerializable("inmueble",inmueble);
-                            PropiedadFragment fragment= new PropiedadFragment();
+                            InmuebleFragment fragment= new InmuebleFragment();
                             fragment.setArguments(bundle);
                             adapter.addFragment(fragment,"Inmueble "+numero);
                         }

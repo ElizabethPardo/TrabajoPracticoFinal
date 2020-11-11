@@ -1,4 +1,4 @@
-package com.example.trabajopracticofinal.ui.propiedades;
+package com.example.trabajopracticofinal.ui.inmuebles;
 
 import android.os.Bundle;
 
@@ -13,13 +13,12 @@ import android.widget.CheckBox;
 import android.widget.ImageView;
 
 import com.example.trabajopracticofinal.R;
-import com.google.android.material.checkbox.MaterialCheckBox;
 import com.google.android.material.textfield.TextInputEditText;
 
-import com.example.trabajopracticofinal.modelo.Propiedad;
+import com.example.trabajopracticofinal.modelo.Inmueble;
 
-public class PropiedadFragment extends Fragment {
-    private  PropiedadViewModel vm;
+public class InmuebleFragment extends Fragment {
+    private InmuebleViewModel vm;
     private  TextInputEditText etDireccion;
     private  TextInputEditText etAmbientes;
     private  TextInputEditText etTipo;
@@ -28,7 +27,7 @@ public class PropiedadFragment extends Fragment {
     private  CheckBox cbestado;
     private  ImageView imagen;
 
-    public PropiedadFragment(TextInputEditText etDireccion, TextInputEditText etAmbientes, TextInputEditText etTipo, TextInputEditText etUso, TextInputEditText etPrecio,CheckBox cbEstado,ImageView imagen) {
+    public InmuebleFragment(TextInputEditText etDireccion, TextInputEditText etAmbientes, TextInputEditText etTipo, TextInputEditText etUso, TextInputEditText etPrecio, CheckBox cbEstado, ImageView imagen) {
         this.etDireccion = etDireccion;
         this.etAmbientes = etAmbientes;
         this.etTipo = etTipo;
@@ -38,7 +37,7 @@ public class PropiedadFragment extends Fragment {
         this.imagen=imagen;
     }
 
-    public PropiedadFragment() {
+    public InmuebleFragment() {
 
     }
 
@@ -48,7 +47,7 @@ public class PropiedadFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
-        View root = inflater.inflate(R.layout.fragment_propiedad, container, false);
+        View root = inflater.inflate(R.layout.fragment_inmueble, container, false);
         inicializar(root, savedInstanceState);
         return root;
     }
@@ -63,17 +62,17 @@ public class PropiedadFragment extends Fragment {
         cbestado=view.findViewById(R.id.cbEstado);
         final ImageView imagen= (ImageView) view.findViewById(R.id.imagen);
 
-        vm= ViewModelProvider.AndroidViewModelFactory.getInstance(getActivity().getApplication()).create(PropiedadViewModel.class);
-        vm.getInmueble().observe(getViewLifecycleOwner(), new Observer<Propiedad>() {
+        vm= ViewModelProvider.AndroidViewModelFactory.getInstance(getActivity().getApplication()).create(InmuebleViewModel.class);
+        vm.getInmueble().observe(getViewLifecycleOwner(), new Observer<Inmueble>() {
             @Override
-            public void onChanged(Propiedad propiedad) {
-                etDireccion.setText(propiedad.getDireccion());
-                etAmbientes.setText(String.valueOf(propiedad.getAmbientes()));
-                etTipo.setText(propiedad.getTipo());
-                etUso.setText(propiedad.getUso());
-                etPrecio.setText(String.valueOf(propiedad.getPrecio()));
-                cbestado.setChecked(propiedad.getEstado());
-                imagen.setImageResource(propiedad.getImagen());
+            public void onChanged(Inmueble inmueble) {
+                etDireccion.setText(inmueble.getDireccion());
+                etAmbientes.setText(String.valueOf(inmueble.getAmbientes()));
+                etTipo.setText(inmueble.getTipo());
+                etUso.setText(inmueble.getUso());
+                etPrecio.setText(String.valueOf(inmueble.getPrecio()));
+                cbestado.setChecked(inmueble.getEstado());
+                imagen.setImageResource(inmueble.getImagen());
             }
         });
 

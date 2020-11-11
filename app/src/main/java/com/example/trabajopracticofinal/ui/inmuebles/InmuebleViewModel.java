@@ -1,4 +1,4 @@
-package com.example.trabajopracticofinal.ui.propiedades;
+package com.example.trabajopracticofinal.ui.inmuebles;
 
 import android.app.Application;
 import android.os.Bundle;
@@ -8,19 +8,19 @@ import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
-import com.example.trabajopracticofinal.modelo.Propiedad;
+import com.example.trabajopracticofinal.modelo.Inmueble;
 
 
 
-public class PropiedadViewModel extends AndroidViewModel {
+public class InmuebleViewModel extends AndroidViewModel {
 
-    private MutableLiveData<Propiedad> inmueble;
+    private MutableLiveData<Inmueble> inmueble;
 
-    public PropiedadViewModel(@NonNull Application application) {
+    public InmuebleViewModel(@NonNull Application application) {
         super(application);
     }
 
-    public LiveData<Propiedad> getInmueble() {
+    public LiveData<Inmueble> getInmueble() {
 
         if(inmueble == null)
         {
@@ -31,7 +31,7 @@ public class PropiedadViewModel extends AndroidViewModel {
 
     public void cargarInmueble(Bundle bundle)
     {
-        Propiedad inmueble= (Propiedad) bundle.getSerializable("inmueble");
+        Inmueble inmueble= (Inmueble) bundle.getSerializable("inmueble");
         this.inmueble.setValue(inmueble);
 
     }

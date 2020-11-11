@@ -3,17 +3,18 @@ package com.example.trabajopracticofinal.modelo;
 import java.io.Serializable;
 
 public class Contrato implements Serializable {
-    private int idContrato;
-    private String fechaIngreso;
-    private String fechaSalida;
-    private double importe;
-    private Propiedad inmueble;
+    private int id;
+    private String fechaDesde;
+    private String fechaHasta;
+    private  int inquilinoId;
     private Inquilino inquilino;
+    private  int inmuebleId;
+    private Inmueble inmueble;
 
-    public Contrato(String fechaIngreso, String fechaSalida,double importe, Propiedad innmueble, Inquilino inquilino) {
-        this.fechaIngreso = fechaIngreso;
-        this.fechaSalida = fechaSalida;
-        this.importe=importe;
+
+    public Contrato(String fechaIngreso, String fechaSalida, Inmueble innmueble, Inquilino inquilino) {
+        this.fechaDesde = fechaIngreso;
+        this.fechaHasta = fechaSalida;
         this.inmueble = innmueble;
         this.inquilino = inquilino;
     }
@@ -21,60 +22,66 @@ public class Contrato implements Serializable {
     public Contrato() {
     }
 
-    public Contrato(String fechaIngreso, String fechaSalida, double importe, Inquilino inquilino) {
-        this.fechaIngreso = fechaIngreso;
-        this.fechaSalida = fechaSalida;
-        this.importe = importe;
+    public Contrato(String fechaIngreso, String fechaSalida, Inquilino inquilino) {
+        this.fechaDesde = fechaIngreso;
+        this.fechaHasta = fechaSalida;
         this.inquilino=inquilino;
     }
 
 
-
-    public int getIdContrato() {
-        return idContrato;
+    public int getId() {
+        return id;
     }
 
-    public void setIdContrato(int idContrato) {
-        this.idContrato = idContrato;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String getFechaIngreso() {
-        return fechaIngreso;
+    public String getFechaDesde() {
+        return fechaDesde;
     }
 
-    public void setFechaIngreso(String  fechaIngreso) {
-        this.fechaIngreso = fechaIngreso;
+    public void setFechaDesde(String fechaDesde) {
+        this.fechaDesde = fechaDesde;
     }
 
-    public String getFechaSalida() {
-        return fechaSalida;
+    public String getFechaHasta() {
+        return fechaHasta;
     }
 
-    public void setFechaSalida(String fechaSalida) {
-        this.fechaSalida = fechaSalida;
+    public void setFechaHasta(String fechaHasta) {
+        this.fechaHasta = fechaHasta;
     }
 
-    public Propiedad getIdInmueble() {
-        return inmueble;
+    public int getInquilinoId() {
+        return inquilinoId;
     }
 
-    public void setIdInmueble(Propiedad idInmueble) {
-        this.inmueble = idInmueble;
+    public void setInquilinoId(int inquilinoId) {
+        this.inquilinoId = inquilinoId;
     }
 
-    public Inquilino getIdInquilino() {
+    public Inquilino getInquilino() {
         return inquilino;
     }
 
-    public void setIdInquilino(Inquilino idInquilino) {
-        this.inquilino = idInquilino;
+    public void setInquilino(Inquilino inquilino) {
+        this.inquilino = inquilino;
     }
 
-    public double getImporte() {
-        return importe;
+    public int getInmuebleId() {
+        return inmuebleId;
     }
 
-    public void setImporte(double importe) {
-        this.importe = importe;
+    public void setInmuebleId(int inmuebleId) {
+        this.inmuebleId = inmuebleId;
+    }
+
+    public Inmueble getInmueble() {
+        return inmueble;
+    }
+
+    public void setInmueble(Inmueble inmueble) {
+        this.inmueble = inmueble;
     }
 }

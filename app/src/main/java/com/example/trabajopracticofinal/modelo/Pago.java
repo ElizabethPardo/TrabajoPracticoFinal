@@ -3,35 +3,30 @@ package com.example.trabajopracticofinal.modelo;
 import java.io.Serializable;
 
 public class Pago implements Serializable {
-    private int idPago;
+    private int id;
     private int nroPago;
     private String fechaPago;
     private Double importe;
-    private int idContrato;
+    private int contratoId;
+    private Contrato contrato;
 
-    public Pago(int idPago, int nroPago, String fechaPago, Double importe, int idContrato) {
-        this.idPago = idPago;
-        this.nroPago = nroPago;
-        this.fechaPago = fechaPago;
-        this.importe = importe;
-        this.idContrato = idContrato;
+
+    public Pago() {
     }
 
     public Pago(int nroPago, String fechaPago, Double importe) {
         this.nroPago = nroPago;
         this.fechaPago = fechaPago;
         this.importe = importe;
+
     }
 
-    public Pago() {
+    public int getId() {
+        return id;
     }
 
-    public int getIdPago() {
-        return idPago;
-    }
-
-    public void setIdPago(int idPago) {
-        this.idPago = idPago;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public int getNroPago() {
@@ -50,7 +45,7 @@ public class Pago implements Serializable {
         this.fechaPago = fechaPago;
     }
 
-    public double getImporte() {
+    public Double getImporte() {
         return importe;
     }
 
@@ -58,11 +53,19 @@ public class Pago implements Serializable {
         this.importe = importe;
     }
 
-    public int getIdContrato() {
-        return idContrato;
+    public int getContratoId() {
+        return contratoId;
     }
 
-    public void setIdContrato(int idContrato) {
-        this.idContrato = idContrato;
+    public void setContratoId(int contratoId) {
+        this.contratoId = contratoId;
+    }
+
+    public Contrato getContrato() {
+        return contrato;
+    }
+
+    public void setContrato(Contrato contrato) {
+        this.contrato = contrato;
     }
 }

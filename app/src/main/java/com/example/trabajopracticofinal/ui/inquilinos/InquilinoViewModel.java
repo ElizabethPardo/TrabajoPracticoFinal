@@ -9,7 +9,6 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
 import com.example.trabajopracticofinal.modelo.Inquilino;
-import com.example.trabajopracticofinal.modelo.Propiedad;
 
 public class InquilinoViewModel extends AndroidViewModel {
 

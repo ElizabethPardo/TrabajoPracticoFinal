@@ -23,6 +23,7 @@ public class PerfilFragment extends Fragment {
     private TextInputEditText etDni;
     private TextInputEditText etApellido;
     private TextInputEditText etNombre;
+    private TextInputEditText etDireccion;
     private TextInputEditText etTelefono;
     private TextInputEditText etEmail;
     private TextInputEditText etPass;
@@ -42,6 +43,7 @@ public class PerfilFragment extends Fragment {
         etDni=view.findViewById(R.id.etDni);
         etApellido=view.findViewById(R.id.etApellido);
         etNombre=view.findViewById(R.id.etNombre);
+        etDireccion=view.findViewById(R.id.etDireccion);
         etTelefono=view.findViewById(R.id.etTelefono);
         etEmail=view.findViewById(R.id.etEmail);
         etPass=view.findViewById(R.id.etPass2);
@@ -52,12 +54,13 @@ public class PerfilFragment extends Fragment {
         vm.getPropietario().observe(getViewLifecycleOwner(), new Observer<Propietario>() {
             @Override
             public void onChanged(Propietario propietario) {
-                etDni.setText(propietario.getDni());
-                etApellido.setText(propietario.getApellido());
                 etNombre.setText(propietario.getNombre());
+                etApellido.setText(propietario.getApellido());
+                etDni.setText(propietario.getDni());
+                etDireccion.setText(propietario.getDireccion());
                 etTelefono.setText(propietario.getTelefono());
                 etEmail.setText(propietario.getEmail());
-                etPass.setText(propietario.getPass());
+                etPass.setText(propietario.getClave());
             }
         });
         vm.recuperarPropietario();
@@ -65,9 +68,11 @@ public class PerfilFragment extends Fragment {
         btEditar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                etDni.setEnabled(true);
-                etApellido.setEnabled(true);
+
                 etNombre.setEnabled(true);
+                etApellido.setEnabled(true);
+                etDni.setEnabled(true);
+                etDireccion.setEnabled(true);
                 etTelefono.setEnabled(true);
                 etEmail.setEnabled(true);
                 etPass.setEnabled(true);

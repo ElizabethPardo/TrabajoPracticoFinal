@@ -12,12 +12,12 @@ import androidx.lifecycle.MutableLiveData;
 import java.util.ArrayList;
 
 import com.example.trabajopracticofinal.modelo.Inquilino;
-import com.example.trabajopracticofinal.modelo.Propiedad;
+import com.example.trabajopracticofinal.modelo.Inmueble;
 
 public class InquilinosViewModel extends AndroidViewModel {
 
     private Context context;
-    private ArrayAdapter<Propiedad> adapter;
+    private ArrayAdapter<Inmueble> adapter;
     private MutableLiveData<ArrayList<Inquilino>> inquilinos;
 
     public InquilinosViewModel(@NonNull Application application) {
@@ -37,9 +37,9 @@ public class InquilinosViewModel extends AndroidViewModel {
     public void cargarInquilinos(){
 
         ArrayList<Inquilino> inquilinos= new ArrayList<>();
-        inquilinos.add(new Inquilino("36555666","Lucero","Martin","Mitre 502","2664554433","martin@gmail.com","Jimena Ortiz","32334489","266778877"));
-        inquilinos.add(new Inquilino("34123345","Emilia","Perez","San Martin 888", "2664232312","emi@gmail.com","Lucas Rodriguez","31222111","2669009988"));
-        inquilinos.add(new Inquilino("37888987","Agustin","Neme","Colon 345","2669887744","agus@hotmail.com","Alana Avila","31222333","2665765432"));
+        inquilinos.add(new Inquilino("Martin","Lucero","36555666","2664554433","Mitre 502","martin@gmail.com","ULP","Jimena"," Ortiz","32334489","266778877","Colon 909"));
+        inquilinos.add(new Inquilino("Emilia","Perez","34123345","2664232312","San Martin 888", "emi@gmail.com","Grupo slot","Lucas"," Rodriguez","31222111","2669009988","Belgrano 676"));
+        inquilinos.add(new Inquilino("Agustin","Neme","37888987","Colon 345","2669887744","agus@hotmail.com","Esso","Alana"," Avila","31222333","2665765432","contirucion 676"));
         this.inquilinos.setValue(inquilinos);
     }
 }

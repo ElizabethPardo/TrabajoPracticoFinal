@@ -23,14 +23,17 @@ public class InquilinoFragment extends Fragment {
     private  TextInputEditText etDireccion;
     private  TextInputEditText etTelefono;
     private  TextInputEditText etEmail;
+    private  TextInputEditText etLugarTrabajo;
     private  TextInputEditText etNombreGarante;
+    private  TextInputEditText etApellidoGarante;
     private  TextInputEditText etDniGarante;
     private  TextInputEditText etTelefonoGarante;
+    private  TextInputEditText etDireccionGarante;
 
     public InquilinoFragment() {
     }
 
-    public InquilinoFragment(int contentLayoutId, TextInputEditText etDni, TextInputEditText etApellido, TextInputEditText etNombre, TextInputEditText etDireccion, TextInputEditText etTelefono, TextInputEditText etEmail, TextInputEditText etNombreGarante, TextInputEditText etDniGarante, TextInputEditText etTelefonoGarante) {
+    public InquilinoFragment(int contentLayoutId, TextInputEditText etDni, TextInputEditText etApellido, TextInputEditText etNombre, TextInputEditText etDireccion, TextInputEditText etTelefono, TextInputEditText etEmail, TextInputEditText etNombreGarante,TextInputEditText etApellidoGarante, TextInputEditText etDniGarante, TextInputEditText etTelefonoGarante, TextInputEditText etDireccionGarante) {
         super(contentLayoutId);
         this.etDni = etDni;
         this.etApellido = etApellido;
@@ -39,10 +42,13 @@ public class InquilinoFragment extends Fragment {
         this.etTelefono = etTelefono;
         this.etEmail = etEmail;
         this.etNombreGarante = etNombreGarante;
+        this.etApellidoGarante=etApellidoGarante;
         this.etDniGarante = etDniGarante;
         this.etTelefonoGarante = etTelefonoGarante;
+        this.etDireccionGarante=etDireccionGarante;
 
     }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -62,24 +68,31 @@ public class InquilinoFragment extends Fragment {
         etDireccion =view.findViewById(R.id.etDireccion);
         etTelefono=view.findViewById(R.id.etTelefono);
         etEmail= view.findViewById(R.id.etEmail);
+        etLugarTrabajo=view.findViewById(R.id.etLugarTrabajo);
         etDniGarante=view.findViewById(R.id.etDniGarante);
         etNombreGarante= view.findViewById(R.id.etNombreGarante);
+        etApellidoGarante=view.findViewById(R.id.etApellidoGarante);
         etTelefonoGarante=view.findViewById(R.id.etTelefonoGarante);
+        etDireccionGarante=view.findViewById(R.id.etDireccionGarante);
 
 
         vm= ViewModelProvider.AndroidViewModelFactory.getInstance(getActivity().getApplication()).create(InquilinoViewModel.class);
         vm.getInquilino().observe(getViewLifecycleOwner(), new Observer<Inquilino>() {
             @Override
             public void onChanged(Inquilino inquilino) {
-                etDni.setText(inquilino.getDni());
-                etApellido.setText(inquilino.getApellido());
+
                 etNombre.setText(inquilino.getNombre());
-                etDireccion.setText(inquilino.getDireccion());
+                etApellido.setText(inquilino.getApellido());
+                etDni.setText(inquilino.getDni());
                 etTelefono.setText(inquilino.getTelefono());
+                etDireccion.setText(inquilino.getDireccion());
                 etEmail.setText(inquilino.getEmail());
-                etDniGarante.setText(inquilino.getDniGarante());
+                etLugarTrabajo.setText(inquilino.getLugarTrabajo());
                 etNombreGarante.setText(inquilino.getNombreGarante());
+                etApellidoGarante.setText(inquilino.getApellidoGarante());
+                etDniGarante.setText(inquilino.getDniGarante());
                 etTelefonoGarante.setText(inquilino.getTelefonoGarante());
+                etDireccionGarante.setText(inquilino.getDireccionGarante());
             }
         });
 

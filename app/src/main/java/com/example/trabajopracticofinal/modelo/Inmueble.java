@@ -2,21 +2,22 @@ package com.example.trabajopracticofinal.modelo;
 
 import java.io.Serializable;
 
-public class Propiedad  implements Serializable {
-    private  int idPropiedad;
+public class Inmueble implements Serializable {
+    private  int id;
     private String direccion;
     private int ambientes;
-    private  String tipo;
     private String uso;
+    private  String tipo;
     private double precio;
     private boolean estado;
     private int imagen;
-    private Propietario propietario;
+    private  int propietarioId;
+    private Propietario duenio;
 
-    public Propiedad() {
+    public Inmueble() {
     }
 
-    public Propiedad(String direccion, int ambientes, String tipo, String uso, double precio, boolean estado,int imagen) {
+    public Inmueble(String direccion, int ambientes, String tipo, String uso, double precio, boolean estado, int imagen) {
         this.direccion = direccion;
         this.ambientes = ambientes;
         this.tipo = tipo;
@@ -26,12 +27,12 @@ public class Propiedad  implements Serializable {
         this.imagen=imagen;
     }
 
-    public int getIdPropiedad() {
-        return idPropiedad;
+    public int getId() {
+        return id;
     }
 
-    public void setIdPropiedad(int idPropiedad) {
-        this.idPropiedad = idPropiedad;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getDireccion() {
@@ -50,20 +51,20 @@ public class Propiedad  implements Serializable {
         this.ambientes = ambientes;
     }
 
-    public String getTipo() {
-        return tipo;
-    }
-
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
-    }
-
     public String getUso() {
         return uso;
     }
 
     public void setUso(String uso) {
         this.uso = uso;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
     }
 
     public double getPrecio() {
@@ -74,14 +75,6 @@ public class Propiedad  implements Serializable {
         this.precio = precio;
     }
 
-    public int getImagen() {
-        return imagen;
-    }
-
-    public void setImagen(int imagen) {
-        this.imagen = imagen;
-    }
-
     public boolean getEstado() {
         return estado;
     }
@@ -90,11 +83,27 @@ public class Propiedad  implements Serializable {
         this.estado = estado;
     }
 
-    public Propietario getPropietario() {
-        return propietario;
+    public int getImagen() {
+        return imagen;
     }
 
-    public void setPropietario(Propietario propietario) {
-        this.propietario = propietario;
+    public void setImagen(int imagen) {
+        this.imagen = imagen;
+    }
+
+    public int getPropietarioId() {
+        return propietarioId;
+    }
+
+    public void setPropietarioId(int propietarioId) {
+        this.propietarioId = propietarioId;
+    }
+
+    public Propietario getDuenio() {
+        return duenio;
+    }
+
+    public void setDuenio(Propietario duenio) {
+        this.duenio = duenio;
     }
 }

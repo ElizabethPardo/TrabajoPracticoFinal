@@ -52,13 +52,11 @@ public class PagoAdapter extends ArrayAdapter<Contrato> {
         Contrato contrato =contratos.get(position);
         TextInputEditText fechaIngreso= item.findViewById(R.id.etdFechaIngreso);
         TextInputEditText fechaSalida= item.findViewById(R.id.etdFechaSalida);
-        TextInputEditText importe=item.findViewById(R.id.etdImporte);
         TextInputEditText direccionInquilino=item.findViewById(R.id.etdDireccionInquilino);
 
-        fechaIngreso.setText(contrato.getFechaIngreso());
-        fechaSalida.setText(contrato.getFechaSalida());
-        importe.setText(" $" +(int) contrato.getImporte());
-        direccionInquilino.setText(contrato.getIdInquilino().getDireccion());
+        fechaIngreso.setText(contrato.getFechaDesde());
+        fechaSalida.setText(contrato.getFechaHasta());
+        direccionInquilino.setText(contrato.getInquilino().getDireccion());
         return  item;
     }
 }

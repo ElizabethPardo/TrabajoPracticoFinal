@@ -75,6 +75,25 @@
         android:layout_marginTop="5dp">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etDireccion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:textColor="#ffffff"
+            android:hint="Dirección"
+            android:inputType="text"
+            android:textSize="20sp"
+            android:enabled="false"/>
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:textColorHint="#ffffff"
+        android:layout_marginTop="5dp">
+
+        <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etTelefono"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
